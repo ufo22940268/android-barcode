@@ -4,7 +4,7 @@
 #
 
 all:
-	mvn install android:redeploy android:run
+	mvn android:undeploy install android:redeploy android:run
 
 
 # vim:ft=make

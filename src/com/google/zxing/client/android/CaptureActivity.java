@@ -148,7 +148,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 
-        showHelpOnFirstLaunch();
+        //showHelpOnFirstLaunch();
     }
 
     @Override
@@ -316,12 +316,12 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
         return super.onKeyDown(keyCode, event);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.capture, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
+    //@Override
+    //public boolean onCreateOptionsMenu(Menu menu) {
+        //MenuInflater menuInflater = getMenuInflater();
+        //menuInflater.inflate(R.menu.capture, menu);
+        //return super.onCreateOptionsMenu(menu);
+    //}
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -554,7 +554,9 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
         for (int x = 0; x < ResultHandler.MAX_BUTTON_COUNT; x++) {
             TextView button = (TextView) buttonView.getChildAt(x);
             if (x < buttonCount) {
-                button.setVisibility(View.VISIBLE);
+                if (x == 2) {
+                    button.setVisibility(View.VISIBLE);
+                }
                 button.setText(resultHandler.getButtonText(x));
                 button.setOnClickListener(new ResultButtonListener(resultHandler, x));
             } else {

@@ -61,10 +61,10 @@ public final class ProductResultHandler extends ResultHandler {
       public void onClick(View view) {
         ProductParsedResult productResult = (ProductParsedResult) getResult();
         String id = productResult.getNormalizedProductID();
-        //openGoogleShopper(productResult.getNormalizedProductID());
-        Intent intent = new Intent(activity, TestActivity.class);
-        intent.putExtra("test", id);
-        activity.startActivity(intent);
+        Intent intent = new Intent();
+        intent.putExtra("barcode", id);
+        activity.setResult(activity.RESULT_OK, intent);
+        activity.finish();
       }
     });
   }
