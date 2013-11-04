@@ -92,25 +92,25 @@ public final class EncodeActivity extends Activity {
     return super.onCreateOptionsMenu(menu);
   }
 
-  @Override
-  public boolean onOptionsItemSelected(MenuItem item) {
-    switch (item.getItemId()) {
-      case R.id.menu_share:
-        share();
-        return true;
-      case R.id.menu_encode:
-        Intent intent = getIntent();
-        if (intent == null) {
-          return false;
-        }
-        intent.putExtra(USE_VCARD_KEY, !qrCodeEncoder.isUseVCard());
-        startActivity(intent);
-        finish();
-        return true;
-      default:
-        return false;
-    }
-  }
+  //@Override
+  //public boolean onOptionsItemSelected(MenuItem item) {
+    //switch (item.getItemId()) {
+      //case R.id.menu_share:
+        //share();
+        //return true;
+      //case R.id.menu_encode:
+        //Intent intent = getIntent();
+        //if (intent == null) {
+          //return false;
+        //}
+        //intent.putExtra(USE_VCARD_KEY, !qrCodeEncoder.isUseVCard());
+        //startActivity(intent);
+        //finish();
+        //return true;
+      //default:
+        //return false;
+    //}
+  //}
   
   private void share() {
     QRCodeEncoder encoder = qrCodeEncoder;
